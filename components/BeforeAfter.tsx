@@ -6,23 +6,23 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const projects = [
   {
-    before: "/before-after/before-1.jpeg",
-    after: "/before-after/after-1.jpeg",
+    before: "https://davesepoxyflooring.com/assets/images/banner/desktop/0-11-IMG_1387.jpeg",
+    after: "https://davesepoxyflooring.com/assets/images/banner/desktop/IMG_1376.jpeg",
     label: "Residential Garage — Montclair, NJ",
   },
   {
-    before: "/before-after/before-2.jpeg",
-    after: "/before-after/after-2.jpeg",
+    before: "https://davesepoxyflooring.com/assets/images/banner/desktop/0-7D324B9D-9442-4CD0-84A6-CE9E6562D8EA.jpeg",
+    after: "https://davesepoxyflooring.com/assets/images/banner/desktop/IMG_5370.jpeg",
     label: "3-Car Garage — Wayne, NJ",
   },
   {
-    before: "/before-after/before-3.jpeg",
-    after: "/before-after/after-3.jpeg",
-    label: "Commercial Shop — Parsippany, NJ",
+    before: "https://davesepoxyflooring.com/assets/images/banner/desktop/0-98F0CD16-2327-4E41-8BA8-B3FF0D546252.jpeg",
+    after: "https://davesepoxyflooring.com/assets/images/banner/desktop/IMG_0826.jpeg",
+    label: "Commercial Space — Parsippany, NJ",
   },
   {
-    before: "/before-after/before-4.jpeg",
-    after: "/before-after/after-4.jpeg",
+    before: "https://davesepoxyflooring.com/assets/images/banner/desktop/0-F4E94ADD-E3D7-43AF-8045-A2C44A2B33B0.jpeg",
+    after: "https://davesepoxyflooring.com/assets/images/banner/desktop/IMG_5288.jpeg",
     label: "Finished Basement — Livingston, NJ",
   },
 ];
@@ -80,11 +80,11 @@ export default function BeforeAfter() {
               </span>
             </div>
             <div className="relative aspect-[4/3] bg-bg-primary overflow-hidden">
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={project.before}
                 alt={`Before — ${project.label}`}
-                fill
-                className="object-cover transition-all duration-700"
+                className="w-full h-full object-cover transition-all duration-700"
               />
             </div>
           </div>
@@ -97,11 +97,11 @@ export default function BeforeAfter() {
               </span>
             </div>
             <div className="relative aspect-[4/3] bg-bg-primary overflow-hidden">
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={project.after}
                 alt={`After — ${project.label}`}
-                fill
-                className="object-cover transition-all duration-700"
+                className="w-full h-full object-cover transition-all duration-700"
               />
             </div>
           </div>
@@ -116,10 +116,10 @@ export default function BeforeAfter() {
                 <button
                   key={i}
                   onClick={() => goTo(i)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
                     i === current
                       ? "bg-accent w-8"
-                      : "bg-border hover:bg-text-muted"
+                      : "bg-border w-2.5 hover:bg-text-muted"
                   }`}
                   aria-label={`Go to project ${i + 1}`}
                 />
