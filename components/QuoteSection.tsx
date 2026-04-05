@@ -1,119 +1,116 @@
-"use client"
+"use client";
 
-import React from "react"
-import { supabase } from "../lib/supabase"
+import { useState } from "react";
 
 export default function QuoteSection() {
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-    const form = e.currentTarget
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("loading");
+
+    const form = e.currentTarget;
+    const data = {
+      full_name: (form.elements.namedItem("full_name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      project_details: (form.elements.namedItem("project_details") as HTMLTextAreaElement).value,
+    };
 
     try {
-      const formData = new FormData(form)
-
-      const full_name = formData.get("full_name")
-      const phone = formData.get("phone")
-      const email = formData.get("email")
-      const project_details = formData.get("project_details")
-
-      const { error: dbError } = await supabase.from("leads").insert([
-        {
-          full_name,
-          phone,
-          email,
-          project_details,
-        },
-      ])
-
-      if (dbError) {
-        alert(dbError.message)
-        return
-      }
-
-      const emailResponse = await fetch("/api/quote", {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          full_name,
-          phone,
-          email,
-          project_details,
-        }),
-      })
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
-      const emailResult = await emailResponse.json()
-
-      if (!emailResponse.ok) {
-        alert(emailResult.error || "Lead saved, but email failed.")
-        return
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
       }
-
-      alert("Quote request sent!")
-      form.reset()
-    } catch (err) {
-      console.log(err)
-      alert("Unexpected error happened. Check console.")
+    } catch {
+      setStatus("error");
     }
   }
 
   return (
-    <section id="quote" className="mx-auto max-w-4xl px-6 py-20">
-      <div className="rounded-3xl bg-neutral-900 p-8 text-white md:p-12">
-        <p className="text-sm uppercase tracking-[0.2em] text-neutral-300">
-          Free Estimate
-        </p>
+    <section
+      id="quote"
+      className="relative bg-bg-primary py-24 lg:py-32 px-6 lg:px-8 overflow-hidden"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,162,78,0.06)_0%,transparent_50%),radial-gradient(circle_at_20%_80%,rgba(212,162,78,0.03)_0%,transparent_40%)]" />
 
-        <h2 className="mt-3 text-3xl font-bold md:text-4xl">
-          Ready to upgrade your floor?
+      <div className="relative z-10 mx-auto max-w-2xl text-center">
+        <p className="section-tag justify-center mb-4 before:hidden">
+          Get Started
+        </p>
+        <h2 className="font-display text-[clamp(2.5rem,5vw,4rem)] leading-none mb-4">
+          READY TO FIX
+          <br />
+          THAT FLOOR?
         </h2>
-
-        <p className="mt-4 max-w-2xl text-neutral-300">
-          Tell us about your project and we’ll get back to you with the next steps.
+        <p className="text-text-secondary text-lg leading-relaxed mb-10">
+          Tell us about your space. We&apos;ll come take a look, give you an
+          honest quote, and get your project on the calendar.
         </p>
 
-        <form onSubmit={handleSubmit} className="mt-8 grid gap-4">
+        <form onSubmit={handleSubmit} className="grid gap-4 text-left">
           <input
-            type="text"
             name="full_name"
+            type="text"
             placeholder="Full Name"
             required
-            className="rounded-lg border border-neutral-700 bg-neutral-800 px-4 py-3 text-white outline-none"
+            className="w-full bg-bg-card border border-border px-5 py-4 text-text-primary text-sm placeholder:text-text-muted outline-none transition-colors focus:border-accent"
           />
-
           <input
-            type="tel"
-            name="phone"
-            placeholder="Phone Number"
-            required
-            className="rounded-lg border border-neutral-700 bg-neutral-800 px-4 py-3 text-white outline-none"
-          />
-
-          <input
-            type="email"
             name="email"
+            type="email"
             placeholder="Email Address"
             required
-            className="rounded-lg border border-neutral-700 bg-neutral-800 px-4 py-3 text-white outline-none"
+            className="w-full bg-bg-card border border-border px-5 py-4 text-text-primary text-sm placeholder:text-text-muted outline-none transition-colors focus:border-accent"
           />
-
+          <input
+            name="phone"
+            type="tel"
+            placeholder="Phone Number"
+            required
+            className="w-full bg-bg-card border border-border px-5 py-4 text-text-primary text-sm placeholder:text-text-muted outline-none transition-colors focus:border-accent"
+          />
           <textarea
             name="project_details"
-            placeholder="Tell us about your project"
+            placeholder="Tell us about your space (garage size, condition, finish preferences...)"
             rows={5}
-            className="rounded-lg border border-neutral-700 bg-neutral-800 px-4 py-3 text-white outline-none"
+            className="w-full bg-bg-card border border-border px-5 py-4 text-text-primary text-sm placeholder:text-text-muted outline-none transition-colors focus:border-accent resize-none"
           />
-
           <button
             type="submit"
-            className="rounded-lg bg-white px-6 py-3 font-semibold text-black transition hover:opacity-90"
+            disabled={status === "loading"}
+            className="btn-primary w-full py-4 text-center disabled:opacity-50"
           >
-            Request a Quote
+            {status === "loading" ? "SENDING..." : "REQUEST FREE QUOTE →"}
           </button>
+
+          {status === "success" && (
+            <p className="text-center text-accent text-sm mt-2">
+              Quote request sent! We&apos;ll be in touch soon.
+            </p>
+          )}
+          {status === "error" && (
+            <p className="text-center text-red-400 text-sm mt-2">
+              Something went wrong. Please try again or call us directly.
+            </p>
+          )}
         </form>
+
+        <a
+          href="tel:+19739014045"
+          className="inline-flex items-center gap-2 font-display text-2xl text-accent mt-8 tracking-wider hover:text-accent-light transition-colors"
+        >
+          ☎ (973) 901-4045
+        </a>
       </div>
     </section>
-  )
+  );
 }
