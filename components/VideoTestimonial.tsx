@@ -51,7 +51,7 @@ export default function VideoTestimonial() {
           </div>
 
           <div className="flex flex-col justify-center">
-            <span className="font-serif text-6xl text-accent/30 leading-none mb-4">
+            <span className="font-serif text-7xl text-accent/30 leading-none mb-4">
               &ldquo;
             </span>
             <p className="text-text-secondary text-lg leading-relaxed italic mb-4">
@@ -67,22 +67,22 @@ export default function VideoTestimonial() {
             </p>
 
             <div className="flex items-center gap-4 pt-6 border-t border-border">
-              <div className="w-12 h-12 bg-accent-dark rounded-full flex items-center justify-center font-display text-lg text-white">
+              <div className="w-14 h-14 bg-accent-dark rounded-full flex items-center justify-center font-display text-xl text-white">
                 L
               </div>
               <div>
-                <p className="font-display text-lg tracking-wider">LES</p>
+                <p className="font-display text-xl tracking-wider">LES</p>
                 <p className="text-text-muted text-sm">Verified Customer — New Jersey</p>
               </div>
             </div>
 
-            <div className="flex gap-1 mt-5 text-accent text-sm tracking-widest">
+            <div className="flex gap-1 mt-5 text-accent text-lg tracking-widest">
               ★★★★★
             </div>
 
             <a
               href="#quote"
-              className="btn-primary px-6 py-3 inline-flex items-center gap-2 mt-8 w-fit"
+              className="btn-primary px-7 py-4 inline-flex items-center gap-2 mt-8 w-fit text-base"
             >
               Get Your Free Quote <span>→</span>
             </a>

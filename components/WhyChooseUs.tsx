@@ -1,5 +1,3 @@
-import { CheckCircle2 } from "lucide-react";
-
 const features = [
   {
     icon: "✦",
@@ -31,8 +29,8 @@ export default function WhyChooseUs() {
           <div>
             <div className="relative">
               <div className="w-full aspect-[4/3] bg-bg-card border border-border relative overflow-hidden">
-                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(212,162,78,0.1)_0%,transparent_50%),repeating-linear-gradient(0deg,transparent,transparent_40px,rgba(212,162,78,0.02)_40px,rgba(212,162,78,0.02)_41px),repeating-linear-gradient(90deg,transparent,transparent_40px,rgba(212,162,78,0.02)_40px,rgba(212,162,78,0.02)_41px)]" />
-                <div className="absolute bottom-8 left-8 right-8 font-display text-[clamp(2rem,4vw,3.5rem)] leading-none text-text-primary/[0.07]">
+                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(249,115,22,0.1)_0%,transparent_50%),repeating-linear-gradient(0deg,transparent,transparent_40px,rgba(249,115,22,0.02)_40px,rgba(249,115,22,0.02)_41px),repeating-linear-gradient(90deg,transparent,transparent_40px,rgba(249,115,22,0.02)_40px,rgba(249,115,22,0.02)_41px)]" />
+                <div className="absolute bottom-8 left-8 right-8 font-display text-[clamp(2.5rem,4vw,4rem)] leading-none text-text-primary/[0.07]">
                   CRAFTSMANSHIP
                   <br />
                   OVER
@@ -58,14 +56,14 @@ export default function WhyChooseUs() {
                   key={f.title}
                   className="flex gap-5 items-start pb-6 border-b border-border last:border-b-0"
                 >
-                  <div className="shrink-0 w-12 h-12 border border-accent-dark flex items-center justify-center text-accent text-lg">
+                  <div className="shrink-0 w-14 h-14 border border-accent-dark flex items-center justify-center text-accent text-xl">
                     {f.icon}
                   </div>
                   <div>
-                    <h4 className="font-display text-lg tracking-wider mb-1">
+                    <h4 className="font-display text-xl tracking-wider mb-2">
                       {f.title}
                     </h4>
-                    <p className="text-text-secondary text-sm leading-relaxed">
+                    <p className="text-text-secondary text-base leading-relaxed">
                       {f.text}
                     </p>
                   </div>

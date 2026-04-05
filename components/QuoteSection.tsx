@@ -40,7 +40,7 @@ export default function QuoteSection() {
       id="quote"
       className="relative bg-bg-primary py-24 lg:py-32 px-6 lg:px-8 overflow-hidden"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,162,78,0.06)_0%,transparent_50%),radial-gradient(circle_at_20%_80%,rgba(212,162,78,0.03)_0%,transparent_40%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(249,115,22,0.06)_0%,transparent_50%),radial-gradient(circle_at_20%_80%,rgba(249,115,22,0.03)_0%,transparent_40%)]" />
 
       <div className="relative z-10 mx-auto max-w-2xl text-center">
         <p className="section-tag justify-center mb-4 before:hidden">
@@ -62,43 +62,43 @@ export default function QuoteSection() {
             type="text"
             placeholder="Full Name"
             required
-            className="w-full bg-bg-card border border-border px-5 py-4 text-text-primary text-sm placeholder:text-text-muted outline-none transition-colors focus:border-accent"
+            className="w-full bg-bg-card border border-border px-6 py-4 text-text-primary text-base placeholder:text-text-muted outline-none transition-colors focus:border-accent"
           />
           <input
             name="email"
             type="email"
             placeholder="Email Address"
             required
-            className="w-full bg-bg-card border border-border px-5 py-4 text-text-primary text-sm placeholder:text-text-muted outline-none transition-colors focus:border-accent"
+            className="w-full bg-bg-card border border-border px-6 py-4 text-text-primary text-base placeholder:text-text-muted outline-none transition-colors focus:border-accent"
           />
           <input
             name="phone"
             type="tel"
             placeholder="Phone Number"
             required
-            className="w-full bg-bg-card border border-border px-5 py-4 text-text-primary text-sm placeholder:text-text-muted outline-none transition-colors focus:border-accent"
+            className="w-full bg-bg-card border border-border px-6 py-4 text-text-primary text-base placeholder:text-text-muted outline-none transition-colors focus:border-accent"
           />
           <textarea
             name="project_details"
             placeholder="Tell us about your space (garage size, condition, finish preferences...)"
             rows={5}
-            className="w-full bg-bg-card border border-border px-5 py-4 text-text-primary text-sm placeholder:text-text-muted outline-none transition-colors focus:border-accent resize-none"
+            className="w-full bg-bg-card border border-border px-6 py-4 text-text-primary text-base placeholder:text-text-muted outline-none transition-colors focus:border-accent resize-none"
           />
           <button
             type="submit"
             disabled={status === "loading"}
-            className="btn-primary w-full py-4 text-center disabled:opacity-50"
+            className="btn-primary w-full py-4 text-base text-center disabled:opacity-50"
           >
             {status === "loading" ? "SENDING..." : "REQUEST FREE QUOTE →"}
           </button>
 
           {status === "success" && (
-            <p className="text-center text-accent text-sm mt-2">
+            <p className="text-center text-accent text-base mt-2">
               Quote request sent! We&apos;ll be in touch soon.
             </p>
           )}
           {status === "error" && (
-            <p className="text-center text-red-400 text-sm mt-2">
+            <p className="text-center text-red-400 text-base mt-2">
               Something went wrong. Please try again or call us directly.
             </p>
           )}
@@ -106,7 +106,7 @@ export default function QuoteSection() {
 
         <a
           href="tel:+19739014045"
-          className="inline-flex items-center gap-2 font-display text-2xl text-accent mt-8 tracking-wider hover:text-accent-light transition-colors"
+          className="inline-flex items-center gap-2 font-display text-3xl text-accent mt-8 tracking-wider hover:text-accent-light transition-colors"
         >
           ☎ (973) 901-4045
         </a>

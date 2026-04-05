@@ -3,7 +3,7 @@ import { Shield } from "lucide-react";
 export default function Guarantee() {
   return (
     <section className="relative bg-bg-primary py-24 lg:py-32 px-6 lg:px-8 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,162,78,0.06)_0%,transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(249,115,22,0.06)_0%,transparent_50%)]" />
 
       <div className="relative z-10 mx-auto max-w-3xl text-center">
         <div className="mx-auto mb-8 w-20 h-20 border border-accent-dark flex items-center justify-center">
@@ -22,17 +22,17 @@ export default function Guarantee() {
           disappear in a year.
         </p>
 
-        <div className="flex justify-center gap-8 mt-12">
+        <div className="flex justify-center gap-12 mt-12">
           {[
             { label: "Material Warranty", value: "15 YR" },
             { label: "Workmanship", value: "LIFETIME" },
             { label: "Satisfaction", value: "100%" },
           ].map((item) => (
             <div key={item.label} className="text-center">
-              <p className="font-display text-3xl text-accent leading-none">
+              <p className="font-display text-4xl text-accent leading-none">
                 {item.value}
               </p>
-              <p className="text-xs tracking-[0.15em] uppercase text-text-muted mt-2">
+              <p className="text-sm tracking-[0.15em] uppercase text-text-muted mt-2">
                 {item.label}
               </p>
             </div>

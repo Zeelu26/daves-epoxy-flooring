@@ -38,22 +38,22 @@ export default function Reviews() {
               key={review.name}
               className="bg-bg-card border border-border p-8 relative"
             >
-              <span className="font-serif text-5xl text-accent/30 leading-none block mb-4">
+              <span className="font-serif text-6xl text-accent/30 leading-none block mb-4">
                 &ldquo;
               </span>
-              <div className="text-accent text-sm tracking-widest mb-4">
+              <div className="text-accent text-base tracking-widest mb-4">
                 ★★★★★
               </div>
-              <p className="text-text-secondary text-[0.95rem] leading-relaxed italic mb-6">
+              <p className="text-text-secondary text-base leading-relaxed italic mb-6">
                 {review.text}
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-accent-dark rounded-full flex items-center justify-center font-display text-sm text-bg-primary">
+                <div className="w-12 h-12 bg-accent-dark rounded-full flex items-center justify-center font-display text-base text-white">
                   {review.initials}
                 </div>
                 <div>
-                  <p className="text-sm font-bold">{review.name}</p>
-                  <p className="text-xs text-text-muted">{review.location}</p>
+                  <p className="text-base font-bold">{review.name}</p>
+                  <p className="text-sm text-text-muted">{review.location}</p>
                 </div>
               </div>
             </div>

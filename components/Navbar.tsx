@@ -23,15 +23,15 @@ export default function Navbar() {
             : "bg-transparent"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8 py-4">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8 py-5">
           <Link
             href="/"
             className="flex items-center gap-3 text-text-primary no-underline"
           >
-            <div className="w-9 h-9 border-2 border-accent rounded flex items-center justify-center font-display text-accent text-lg font-bold">
+            <div className="w-10 h-10 border-2 border-accent rounded flex items-center justify-center font-display text-accent text-xl font-bold">
               D
             </div>
-            <span className="font-display text-lg tracking-[0.15em]">
+            <span className="font-display text-xl tracking-[0.15em]">
               DAVE&apos;S EPOXY
             </span>
           </Link>
@@ -41,7 +41,7 @@ export default function Navbar() {
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(" ", "-")}`}
-                className="text-text-secondary text-xs font-medium uppercase tracking-[0.12em] transition-colors hover:text-accent"
+                className="text-text-secondary text-sm font-medium uppercase tracking-[0.12em] transition-colors hover:text-accent"
               >
                 {item}
               </a>
@@ -50,15 +50,15 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-5 lg:flex">
             <a
-              href="tel:+19739014565"
-              className="flex items-center gap-2 text-xs font-semibold text-text-primary tracking-wide"
+              href="tel:+19739014045"
+              className="flex items-center gap-2 text-sm font-semibold text-text-primary tracking-wide"
             >
-              <Phone className="h-3.5 w-3.5 text-accent" />
-              (973) 901-4565
+              <Phone className="h-4 w-4 text-accent" />
+              (973) 901-4045
             </a>
             <a
               href="#quote"
-              className="btn-primary px-5 py-2.5 text-xs"
+              className="btn-primary px-6 py-3 text-sm"
             >
               Free Quote
             </a>

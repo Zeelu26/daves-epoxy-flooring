@@ -27,7 +27,7 @@ export default function Process() {
       id="process"
       className="relative bg-bg-secondary py-24 lg:py-32 px-6 lg:px-8 overflow-hidden"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_0%,rgba(212,162,78,0.04)_0%,transparent_60%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_0%,rgba(249,115,22,0.04)_0%,transparent_60%)] pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="mb-14 max-w-2xl">
@@ -49,13 +49,13 @@ export default function Process() {
                   : ""
               } ${i < 2 ? "max-xl:border-b max-xl:border-border" : ""}`}
             >
-              <p className="font-display text-5xl text-accent/50 leading-none mb-5">
+              <p className="font-display text-6xl text-accent/50 leading-none mb-5">
                 {step.number}
               </p>
-              <h3 className="font-display text-xl tracking-wider mb-3">
+              <h3 className="font-display text-2xl tracking-wider mb-3">
                 {step.title}
               </h3>
-              <p className="text-text-secondary text-sm leading-relaxed">
+              <p className="text-text-secondary text-base leading-relaxed">
                 {step.text}
               </p>
             </div>

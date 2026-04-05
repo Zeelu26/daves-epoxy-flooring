@@ -35,10 +35,10 @@ export default function ServiceAreas() {
           {areas.map((area) => (
             <div
               key={area}
-              className="group flex items-center gap-3 bg-bg-card border border-border px-5 py-4 transition-all duration-300 hover:border-accent-dark"
+              className="group flex items-center gap-3 bg-bg-card border border-border px-6 py-5 transition-all duration-300 hover:border-accent-dark"
             >
-              <MapPin className="h-4 w-4 text-accent shrink-0" />
-              <span className="text-sm font-medium text-text-secondary group-hover:text-text-primary transition-colors">
+              <MapPin className="h-5 w-5 text-accent shrink-0" />
+              <span className="text-base font-medium text-text-secondary group-hover:text-text-primary transition-colors">
                 {area}
               </span>
             </div>

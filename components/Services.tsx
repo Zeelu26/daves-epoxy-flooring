@@ -54,23 +54,23 @@ export default function Services() {
                 className="group relative bg-bg-card border border-border p-8 overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:border-accent-dark"
               >
                 <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-accent to-accent-dark scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />
-                <span className="absolute top-4 right-5 font-display text-4xl text-accent/[0.06] leading-none">
+                <span className="absolute top-4 right-5 font-display text-5xl text-accent/[0.06] leading-none">
                   {service.number}
                 </span>
 
-                <div className="w-12 h-12 border border-accent-dark flex items-center justify-center text-accent mb-6">
-                  <Icon className="h-5 w-5" />
+                <div className="w-14 h-14 border border-accent-dark flex items-center justify-center text-accent mb-6">
+                  <Icon className="h-6 w-6" />
                 </div>
 
-                <h3 className="font-display text-xl tracking-wider mb-3">
+                <h3 className="font-display text-2xl tracking-wider mb-3">
                   {service.title}
                 </h3>
-                <p className="text-text-secondary text-sm leading-relaxed">
+                <p className="text-text-secondary text-base leading-relaxed">
                   {service.text}
                 </p>
                 <a
                   href="#quote"
-                  className="inline-flex items-center gap-1.5 text-accent text-xs tracking-[0.1em] uppercase font-semibold mt-5 transition-[gap] duration-300 hover:gap-3"
+                  className="inline-flex items-center gap-1.5 text-accent text-sm tracking-[0.1em] uppercase font-semibold mt-5 transition-[gap] duration-300 hover:gap-3"
                 >
                   Get Started <span>→</span>
                 </a>
